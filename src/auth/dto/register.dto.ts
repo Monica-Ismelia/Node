@@ -39,7 +39,7 @@ export class RegisterDto { // Define la clase RegisterDto
     required: false,
     type: String,
     description: 'Sector al que pertenece el usuario. Valores válidos: COMERCIO, BANCA, EDUCACION.',
-    example: 'COMERCIO',
+    example: 'comercio',
     enum: UserSector,
   }) // Define la propiedad sector como opcional usando el enum UserSector
   sector?: UserSector;

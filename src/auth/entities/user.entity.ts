@@ -1,14 +1,4 @@
-import { 
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  UpdateDateColumn,
-  OneToMany,
-  BeforeInsert,
-  BeforeUpdate
-} from 'typeorm';
-
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { File } from '../../files/entities/file.entity';
 import { Email } from '../../emails/entities/email.entity';
 
@@ -47,21 +37,10 @@ export class User {
 
   @OneToMany(() => Email, email => email.sender)
   sentEmails: Email[];
-@CreateDateColumn({ name: 'created_at' })
-createdAt: Date;
 
-@UpdateDateColumn({ name: 'updated_at' })
-updatedAt: Date;
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: Date;
 
-  /* ------------------------- */
-  /* NORMALIZACIÓN AUTOMÁTICA */
-  /* ------------------------- */
-  
-  @BeforeInsert()
-  @BeforeUpdate()
-  normalizeSector() {
-    if (this.sector) {
-      this.sector = this.sector.toString().toLowerCase() as UserSector;
-    }
-  }
+  @UpdateDateColumn({ name: 'updated_at' })
+  updatedAt: Date;
 }
