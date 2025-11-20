@@ -36,8 +36,9 @@ import { Email } from './emails/entities/email.entity';
           password: configService.get('DB_PASSWORD', 'postgres'),
           database: configService.get('DB_DATABASE', 'gestor_archivos_db'),
           entities: [User, File, Email],
-          synchronize: configService.get('NODE_ENV') !== 'production',
-          logging: false,
+          synchronize: true // ← déjalo así
+          //synchronize: configService.get('NODE_ENV') !== 'production',
+          //logging: false,
         };
       },
     }),
