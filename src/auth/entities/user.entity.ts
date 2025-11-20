@@ -47,12 +47,11 @@ export class User {
 
   @OneToMany(() => Email, email => email.sender)
   sentEmails: Email[];
+@CreateDateColumn({ name: 'created_at' })
+createdAt: Date;
 
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
+@UpdateDateColumn({ name: 'updated_at' })
+updatedAt: Date;
 
   /* ------------------------- */
   /* NORMALIZACIÓN AUTOMÁTICA */
