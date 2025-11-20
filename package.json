@@ -12,7 +12,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main.js",
     "test": "jest",
-    "migration:run": "npx ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/typeorm.config.ts"
+    "migration:run": "npx ts-node --esm ./node_modules/typeorm/cli.js migration:run -d ./typeorm.datasource.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.20",
