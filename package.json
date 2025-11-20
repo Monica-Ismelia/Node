@@ -5,7 +5,7 @@
   "author": "Monica",
   "license": "MIT",
   "scripts": {
-    "prebuild": "rimraf dist", 
+    "prebuild": "npx rimraf dist",
   "build": "nest build",     
   "start": "node dist/main.js",
     "start:dev": "nest start --watch",
