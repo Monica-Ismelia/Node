@@ -25,7 +25,7 @@ import { Email } from './emails/entities/email.entity';
             type: 'postgres',
             url: databaseUrl,
             entities: [User, File, Email],
-            synchronize: false, // ¡Nunca en producción!
+            synchronize: true, // ¡Nunca en producción!
             logging: false,
             // 🔑 SOLUCIÓN SSL/TLS REQUERIDA POR RENDER
             ssl: {
